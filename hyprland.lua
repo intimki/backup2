@@ -119,8 +119,7 @@ hl.config({
     },
     render = {
         direct_scanout = 2,
-        cm_enabled = false,
-        async_commit = true
+        cm_enabled = false
     },
     misc = {
         disable_splash_rendering = true,
@@ -240,6 +239,3 @@ hl.window_rule({
     float = true,
     size = { 1080, 920 }
 })
-
--- For Noctalia Color templates
-require("noctalia").apply_theme()
