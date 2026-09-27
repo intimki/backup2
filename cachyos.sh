@@ -4,9 +4,6 @@ set -e
 KEY="F3B607488DB35A47"
 CONF="/etc/pacman.conf"
 
-# Отключаем интерактивные запросы sudo (пароль вводится один раз в начале)
-sudo -v
-
 sudo pacman-key --recv-keys "$KEY" --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key "$KEY"
 
@@ -47,7 +44,7 @@ sudo mv /tmp/pacman.conf.new "$CONF"
 sudo pacman -Syyu --noconfirm
 
 # Установка пакетов (в алфавитном порядке)
-sudo pacman -S --noconfirm --needed \
+sudo pacman -S --noconfirm \
 alsa-utils \
 base-devel \
 ddcutil \
@@ -88,17 +85,17 @@ sudo systemctl enable rtirq
 # Сборка и установка AUR-пакетов
 git clone https://aur.archlinux.org/rtl8761b-firmware.git || true
 cd rtl8761b-firmware
-makepkg -sirc --noconfirm --needed
+makepkg -sirc --noconfirm
 cd ..
 
 git clone https://aur.archlinux.org/apple_cursor.git || true
 cd apple_cursor
-makepkg -sirc --noconfirm --needed
+makepkg -sirc --noconfirm
 cd ..
 
 git clone https://aur.archlinux.org/adwaita-colors-icon-theme.git || true
 cd adwaita-colors-icon-theme
-makepkg -sirc --noconfirm --needed
+makepkg -sirc --noconfirm
 cd ..
 
 # Клонирование и настройка backup2
