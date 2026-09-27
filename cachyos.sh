@@ -48,7 +48,6 @@ sudo pacman -S --noconfirm \
 alsa-utils \
 base-devel \
 ddcutil \
-discord \
 firefox \
 firefox-i18n-uk \
 git \
