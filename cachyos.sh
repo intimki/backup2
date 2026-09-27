@@ -108,3 +108,5 @@ sudo mv -f 10-power.conf 20-performance.conf 30-input.conf /etc/cmdline.d/
 
 cd ..
 rm -rf backup2/
+
+echo "УДАЛИТЬ linux-zen, НАСТРОИТЬ /boot/loader/loader.conf, НАСТРОИТЬ /etc/mkinitcpio.d/linux-cachyos-bore.preset, ДОБАВИТЬ nvidia nvidia_modeset nvidia_uvm nvidia_drm /etc/mkinitcpio.conf"
