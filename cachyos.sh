@@ -38,7 +38,7 @@ sudo -E awk '
   { print }
 ' "$CONF" > /tmp/pacman.conf.new
 
-sudo mv /tmp/pacman.conf.new "$CONF"
+sudo mv -f /tmp/pacman.conf.new "$CONF"
 
 # Обновление системы
 sudo pacman -Syyu --noconfirm
