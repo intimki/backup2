@@ -1,0 +1,67 @@
+[general]
+autostart = ["noctalia", "kitty"]
+
+[environment]
+XCURSOR_THEME="macOS-White"
+XCURSOR_SIZE="24"
+
+GTK_THEME="adw-gtk3-dark"
+QT_QPA_PLATFORMTHEME="qt6ct"
+
+NVD_BACKEND="direct"
+GBM_BACKEND="nvidia-drm"
+__GLX_VENDOR_LIBRARY_NAME="nvidia"
+LIBVA_DRIVER_NAME="nvidia"
+CUDA_DISABLE_PERF_BOOST="1"
+
+ELECTRON_OZONE_PLATFORM_HINT="wayland"
+
+WINEDLLOVERRIDES="version=n,b;winealsa.drv=d"
+VKD3D_CONFIG="descriptor_heap"
+PROTON_NVIDIA_LIBS="1"
+PROTON_DLSS_UPGRADE="1"
+DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=J"
+DXVK_NVAPI_DRS_NGX_DLSS_FG_OVERRIDE="off"
+DXVK_NVAPI_DRS_NGX_DLSS_NR_OVERRIDE="off"
+
+GDK_BACKEND="wayland,x11,*"
+QT_QPA_PLATFORM="wayland;xcb"
+SDL_VIDEODRIVER="wayland,x11"
+SDL_VIDEO_DRIVER="wayland,x11"
+CLUTTER_BACKEND="wayland"
+
+[output.DP-1]
+mode = "1920x1080@180"
+position = [0, 0]
+scale = 1
+tearing = true
+vrr = "fullscreen"
+
+[keybinds]
+"Mod+Q" = "spawn kitty"
+"Mod+C" = "window-close"
+
+"Mod+Space" = "spawn noctalia msg panel-toggle launcher"
+"Mod+S" = "spawn noctalia msg panel-toggle control-center"
+"Mod+Comma" = "spawn noctalia msg settings-toggle"
+"Alt+Tab" = "spawn noctalia msg window-switcher hold"
+"Mod+Shift+A" = "spawn noctalia msg screenshot-annotate"
+"Mod+Ctrl+A" = "spawn noctalia msg annotate"
+
+[input]
+middle_click_paste = false
+
+[input.keyboard]
+layout = "us,ua,ru"
+options = "grp:alt_shift_toggle"
+
+[input.mouse]
+accel_profile = "flat"
+
+[appearance]
+border_width = 1
+corner_radius = 10
+drag_opacity = 1
+
+[layout]
+mode = "stacking"
