@@ -1,5 +1,7 @@
 [general]
-autostart = ["noctalia", "kitty"]
+autostart = ["noctalia"]
+nvidia_sync_workaround = false
+show_cheatsheet = false
 
 [environment]
 XCURSOR_THEME="macOS-White"
@@ -8,9 +10,7 @@ XCURSOR_SIZE="24"
 GTK_THEME="adw-gtk3-dark"
 QT_QPA_PLATFORMTHEME="qt6ct"
 
-NVD_BACKEND="direct"
-GBM_BACKEND="nvidia-drm"
-__GLX_VENDOR_LIBRARY_NAME="nvidia"
+MOZ_DISABLE_RDD_SANDBOX="1"
 LIBVA_DRIVER_NAME="nvidia"
 CUDA_DISABLE_PERF_BOOST="1"
 
@@ -36,17 +36,24 @@ position = [0, 0]
 scale = 1
 tearing = true
 vrr = "fullscreen"
+workspaces = ["фдкча"]
 
 [keybinds]
+"Mod+Escape" = "session-quit"
+
 "Mod+Q" = "spawn kitty"
 "Mod+C" = "window-close"
 
+"Mod+S" = "window-toggle-maximize"
+"Mod+D" = "window-toggle-maximize-to-edges"
+"Mod+F" = "window-toggle-fullscreen"
+
+"Mod+WheelUp" = "window-focus-left"
+"Mod+WheelDown" = "window-focus-right"
+
 "Mod+Space" = "spawn noctalia msg panel-toggle launcher"
-"Mod+S" = "spawn noctalia msg panel-toggle control-center"
-"Mod+Comma" = "spawn noctalia msg settings-toggle"
 "Alt+Tab" = "spawn noctalia msg window-switcher hold"
-"Mod+Shift+A" = "spawn noctalia msg screenshot-annotate"
-"Mod+Ctrl+A" = "spawn noctalia msg annotate"
+"Mod+Shift+S" = "spawn noctalia msg screenshot-region"
 
 [input]
 middle_click_paste = false
@@ -59,9 +66,23 @@ options = "grp:alt_shift_toggle"
 accel_profile = "flat"
 
 [appearance]
-border_width = 1
+border_width = 0
 corner_radius = 10
 drag_opacity = 1
 
+[appearance.blur]
+enabled = false
+
 [layout]
 mode = "stacking"
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating_size_px = { width = 800, height = 600 }
+
+[include.optional]
+files = ["noctalia.toml"]
